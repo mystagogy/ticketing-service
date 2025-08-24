@@ -11,3 +11,9 @@
 ```bash
 docker-compose up -d
 ```
+
+------------
+
+1. [API 명세서](https://github.com/mystagogy/ticketing-service/wiki/API-명세서)
+2. [ERD](https://github.com/mystagogy/ticketing-service/wiki/ERD)
+3. [인프라 구성도](https://github.com/mystagogy/ticketing-service/wiki/인프라-구성도)
