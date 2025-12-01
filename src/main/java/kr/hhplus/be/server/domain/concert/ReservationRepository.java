@@ -8,5 +8,5 @@ public interface ReservationRepository {
 
     Reservation save(Reservation reservation);
 
-    void releaseExpiredReservations(LocalDateTime now);
+    void releaseExpiredReservations(LocalDateTime threshold);
 }

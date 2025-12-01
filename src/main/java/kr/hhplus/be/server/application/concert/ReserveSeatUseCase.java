@@ -19,7 +19,8 @@ public class ReserveSeatUseCase {
     public Reservation reserveSeat(Long userId, Long seatId) {
         LocalDateTime now = LocalDateTime.now();
 
-        reservationRepository.releaseExpiredReservations(now);
+        LocalDateTime threshold = now.minusMinutes(TEMP_RESERVATION_MINUTES);
+        reservationRepository.releaseExpiredReservations(threshold);
 
         Optional<Reservation> existingReservation =
                 reservationRepository.findActiveReservationBySeatId(seatId, now);

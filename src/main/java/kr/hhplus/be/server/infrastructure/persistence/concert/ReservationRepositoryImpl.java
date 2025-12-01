@@ -49,8 +49,8 @@ public class ReservationRepositoryImpl implements ReservationRepository {
     }
 
     @Override
-    public void releaseExpiredReservations(LocalDateTime now) {
-        jpaRepository.findByPaidIsFalseAndReservedAtBefore(now.minusMinutes(5))
+    public void releaseExpiredReservations(LocalDateTime threshold) {
+        jpaRepository.findByPaidIsFalseAndReservedAtBefore(threshold)
                 .forEach(jpaRepository::delete);
     }
 }
